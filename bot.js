@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 // Discord Clientのインスタンス作成
 const client = new Discord.Client();
 // トークンの用意
-// const token = "ODUyNzE2Mjk4ODk4ODk4OTQ1.YMK38A.vms-e41NlzM339rayNcPc1eqxT4";
+const token = "";
 
 //処理待ち
 client.on("ready", () => {
