@@ -3,7 +3,7 @@ const Discord = require("discord.js");
 // Discord Clientのインスタンス作成
 const client = new Discord.Client();
 // トークンの用意
-const token = "ODUyNzE2Mjk4ODk4ODk4OTQ1.YMK38A.82uwD0WhqHqiqemd2ovT92CRlNg";
+// const token = "ODUyNzE2Mjk4ODk4ODk4OTQ1.YMK38A.82uwD0WhqHqiqemd2ovT92CRlNg";
 
 //処理待ち
 client.on("ready", () => {
@@ -31,40 +31,24 @@ client.on("message", (message) => {
     message.react("😇").catch(console.error);
   }
 
-  if (message.content === "あ") {
-    //テキストに対してテキストで対応
-    // let channel = message.channel;
-    // let author = message.author.username;
-    // let reply_text = `😡`;
-
-    // message
-    //   .reply(reply_text)
-    //   .then((message) => console.log(`Sent message: ${reply_text}`))
-    //   .catch(console.error);
-    // return;
-
-    //テキストに対してリアクションで対応
-    message.react("😇").catch(console.error);
-  }
-
   if (message.content === "かわいい") {
     //テキストに対してリアクションで対応
-    message.react("").catch(console.error);
+    message.react("😆").catch(console.error);
   }
 
-  if (message.content === "い") {
+  if (message.content === "しね") {
     //テキストに対してリアクションで対応
-    message.react("😇").catch(console.error);
+    message.react("😡").catch(console.error);
   }
 
-  if (message.content === "い") {
+  if (message.content === "うれしい") {
     //テキストに対してリアクションで対応
-    message.react("😇").catch(console.error);
+    message.react("🤗").catch(console.error);
   }
 
-  if (message.content === "い") {
+  if (message.content === "かなしい") {
     //テキストに対してリアクションで対応
-    message.react("😇").catch(console.error);
+    message.react("😖").catch(console.error);
   }
 
   if (message.content.match(/discord.gg/)) {
