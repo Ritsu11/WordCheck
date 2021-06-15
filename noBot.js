@@ -10,3 +10,13 @@ if (String(message).indexOf("あ") !== -1) {
     .catch(console.error);
   return;
 }
+
+if (String(message).indexOf(line) !== -1) {
+  message.react("😡").catch(console.error);
+  console.log(line);
+}
+
+//正規表現を使った文字検出
+if (message.content.match(/うわああ/)) {
+  message.react("😡").catch(console.error);
+}

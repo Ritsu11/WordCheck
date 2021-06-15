@@ -1,6 +1,6 @@
 "use strict";
 
-// discord.js モジュールのインポート
+// discord.js FileStream モジュールのインポート
 const Discord = require("discord.js");
 const fs = require("fs");
 // Discord Clientのインスタンス作成
@@ -8,9 +8,17 @@ const client = new Discord.Client();
 // トークンの用意
 const token = "";
 
-let text = fs.readFileSync("./oko.txt", "utf8");
-let lines = text.toString().split("\n");
-console.log(lines);
+//テキストファイル読み込み
+let textAnger = fs.readFileSync("./oko.txt", "utf8");
+let textJoy = fs.readFileSync("./yorokobi.txt", "utf8");
+
+//分割して配列にまとめ
+let Angers = textAnger.toString().split("\n");
+let Joys = textJoy.toString().split("\n");
+
+//分割確認コンソール
+console.log(Angers);
+console.log(Joys);
 
 //処理待ち
 client.on("ready", () => {
@@ -22,17 +30,18 @@ client.on("message", (message) => {
     return;
   }
 
-  for (let line of lines) {
-    if (String(message).indexOf(line) !== -1) {
+  //怒り検出
+  for (let Anger of Angers) {
+    if (message.content.match(Anger)) {
       message.react("😡").catch(console.error);
-      console.log(line);
     }
   }
-  //関数を使った文字検出
 
-  //正規表現を使った文字検出
-  if (message.content.match(/うわああ/)) {
-    message.react("😡").catch(console.error);
+  //喜び検出
+  for (let Joy of Joys) {
+    if (message.content.match(Joy)) {
+      message.react("😡").catch(console.error);
+    }
   }
 });
 client.login(token);
