@@ -1,9 +1,16 @@
+"use strict";
+
 // discord.js モジュールのインポート
 const Discord = require("discord.js");
+const fs = require("fs");
 // Discord Clientのインスタンス作成
 const client = new Discord.Client();
 // トークンの用意
 const token = "";
+
+let text = fs.readFileSync("./oko.txt", "utf8");
+let lines = text.toString().split("\n");
+console.log(lines);
 
 //処理待ち
 client.on("ready", () => {
@@ -15,35 +22,17 @@ client.on("message", (message) => {
     return;
   }
 
+  for (let line of lines) {
+    if (String(message).indexOf(line) !== -1) {
+      message.react("😡").catch(console.error);
+      console.log(line);
+    }
+  }
   //関数を使った文字検出
-  if (String(message).indexOf("かわいい") !== -1) {
-    message.react("😆").catch(console.error);
-  }
-
-  if (String(message).indexOf("しね") !== -1) {
-    message.react("😡").catch(console.error);
-  }
-
-  if (String(message).indexOf("うれしい") !== -1) {
-    message.react("🤗").catch(console.error);
-  }
-
-  if (String(message).indexOf("かなしい") !== -1) {
-    message.react("😖").catch(console.error);
-  }
 
   //正規表現を使った文字検出
   if (message.content.match(/うわああ/)) {
     message.react("😡").catch(console.error);
-  }
-
-  if (message.content.match(/また/)) {
-    message.react("🤗").catch(console.error);
-  }
-
-  //テキスト削除
-  if (message.content.match(/discord.gg/)) {
-    message.delete(100);
   }
 });
 client.login(token);
