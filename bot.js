@@ -9,8 +9,8 @@ const client = new Discord.Client();
 const token = "";
 
 //テキストファイル読み込み
-let textAnger = fs.readFileSync("./oko.txt", "utf8");
-let textJoy = fs.readFileSync("./yorokobi.txt", "utf8");
+let textAnger = fs.readFileSync("./emotions/oko.txt", "utf8");
+let textJoy = fs.readFileSync("./emotions/yorokobi.txt", "utf8");
 
 //分割して配列にまとめ
 let Angers = textAnger.toString().split("\n");
