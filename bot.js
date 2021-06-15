@@ -40,7 +40,7 @@ client.on("message", (message) => {
   //喜び検出
   for (let Joy of Joys) {
     if (message.content.match(Joy)) {
-      message.react("😡").catch(console.error);
+      message.react("😆").catch(console.error);
     }
   }
 });
