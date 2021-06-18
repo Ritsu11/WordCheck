@@ -6,7 +6,7 @@ const fs = require("fs");
 // Discord Clientのインスタンス作成
 const client = new Discord.Client();
 // トークンの用意
-const token = "";
+const token = "ODUyNzE2Mjk4ODk4ODk4OTQ1.YMK38A.MGJGJA2YK3B3YdyLp5MqmTjc-DA";
 
 //テキストファイル読み込み
 let textAnger = fs.readFileSync("./emotions/oko.txt", "utf8");
@@ -18,7 +18,7 @@ let Angers = textAnger.toString().split("\n");
 let Joys = textJoy.toString().split("\n");
 let Bads = textBad.toString().split("\n");
 
-//分割確認コンソール
+//分割確認コンソール(今後削除予定)
 console.log(Angers);
 console.log(Joys);
 console.log(Bads);
@@ -48,10 +48,15 @@ client.on("message", (message) => {
   }
 
   //不適切検出
-  for (let Bad of Bads) {
-    if (message.content.match(Bad)) {
-      message.react("💩").catch(console.error);
-    }
+  for (let {} of Bads) {
+    let reply_text = `不適切な言葉が含まれています\n言葉遣いに気を付けましょう`;
+
+    //メッセージで内容を指摘
+    message
+      .reply(reply_text)
+      .then(() => console.log(`Sent message: ${reply_text}`))
+      .catch(console.error);
+    return;
   }
 });
 client.login(token);
