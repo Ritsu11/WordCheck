@@ -6,7 +6,7 @@ const fs = require("fs");
 // Discord Clientのインスタンス作成
 const client = new Discord.Client();
 // トークンの用意
-const token = "ODUyNzE2Mjk4ODk4ODk4OTQ1.YMK38A.MGJGJA2YK3B3YdyLp5MqmTjc-DA";
+const token = "";
 
 //テキストファイル読み込み
 let textAnger = fs.readFileSync("./emotions/oko.txt", "utf8");
