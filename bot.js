@@ -48,15 +48,17 @@ client.on("message", (message) => {
   }
 
   //不適切検出
-  for (let {} of Bads) {
-    let reply_text = `不適切な言葉が含まれています\n言葉遣いに気を付けましょう`;
+  for (let Bad of Bads) {
+    if (message.content.match(Bad)) {
+      let reply_text = `不適切な言葉が含まれています\n言葉遣いに気を付けましょう`;
 
-    //メッセージで内容を指摘
-    message
-      .reply(reply_text)
-      .then(() => console.log(`Sent message: ${reply_text}`))
-      .catch(console.error);
-    return;
+      //メッセージで内容を指摘
+      message
+        .reply(reply_text)
+        .then(() => console.log(`Sent message: ${reply_text}`))
+        .catch(console.error);
+      return;
+    }
   }
 });
 client.login(token);
