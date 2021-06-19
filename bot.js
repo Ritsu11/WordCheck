@@ -53,7 +53,7 @@ client.on("message", (message) => {
   //愛情検出
   for (let Love of Loves) {
     if (message.content.match(Love)) {
-      message.react("").catch(console.error);
+      message.react("😍").catch(console.error);
     }
   }
 
