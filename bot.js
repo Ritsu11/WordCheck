@@ -20,14 +20,8 @@ let Joys = textJoy.toString().split("\n");
 let Loves = textLove.toString().split("\n");
 let Bads = textBad.toString().split("\n");
 
-//分割確認コンソール(今後削除予定)
-console.log(Angers);
-console.log(Joys);
-console.log(Loves);
-console.log(Bads);
-
 //処理待ち
-client.on("ready", () => {
+client.once("ready", () => {
   console.log("ready...");
 });
 //Bot自身の発言を無視する
@@ -63,10 +57,7 @@ client.on("message", (message) => {
       let reply_text = `不適切な言葉が含まれています\n言葉遣いに気を付けましょう`;
 
       //メッセージで内容を指摘
-      message
-        .reply(reply_text)
-        .then(() => console.log(`Sent message: ${reply_text}`))
-        .catch(console.error);
+      message.reply(reply_text).catch(console.error);
       return;
     }
   }
