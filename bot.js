@@ -12,7 +12,7 @@ const token = "";
 let textAnger = fs.readFileSync("./emotions/oko.txt", "utf8");
 let textJoy = fs.readFileSync("./emotions/yorokobi.txt", "utf8");
 let textLove = fs.readFileSync("./emotions/ai.txt", "utf8");
-let textBad = fs.readFileSync("./emotions/Bad.txt", "utf8");
+let textBad = fs.readFileSync("./emotions/bad.txt", "utf8");
 
 //分割して配列にまとめ
 let Angers = textAnger.toString().split("\n");
