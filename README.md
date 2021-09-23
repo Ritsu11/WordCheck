@@ -10,6 +10,8 @@ Discordサーバ管理者が以下のURLをクリックして、導入したい�
 https://discord.com/oauth2/authorize?client_id=852716298898898945&scope=bot&permissions=0
 ```
 
+一時公開停止
+
 # Version
 
 Discord.js: 3.0.1
